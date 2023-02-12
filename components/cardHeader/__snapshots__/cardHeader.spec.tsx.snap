@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardHeader renders the component 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <img
+      alt="Image Alt"
+      class="image"
+      data-nimg="1"
+      decoding="async"
+      height="150"
+      loading="lazy"
+      src="/_next/image?url=https%3A%2F%2Fvia.placeholder.com%2F150&w=384&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Fvia.placeholder.com%2F150&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Fvia.placeholder.com%2F150&w=384&q=75 2x"
+      style="color: transparent;"
+      width="150"
+    />
+    <div
+      class="body"
+    >
+      <div
+        class="title"
+      >
+        Title
+      </div>
+      <span
+        class="date"
+      >
+        Sun Aug 01 2021
+      </span>
+    </div>
+  </div>
+</div>
+`;

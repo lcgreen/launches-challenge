@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders the component 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="header"
+    >
+      <div>
+        Header
+      </div>
+    </div>
+    <div
+      class="body"
+    >
+      children
+    </div>
+    <div
+      class="footer"
+    >
+      <div>
+        Footer
+      </div>
+    </div>
+  </div>
+</div>
+`;
