@@ -1,22 +1,21 @@
 .container {
   border: 1px solid #000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 5px 10px black;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  height: 200px;
   background: white;
   color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
   border-radius: 0.5rem;
+  opacity: 0.9;
+  height: 250px;
 }
 
-.container:hover, .container:active {
+.container:hover,
+.container:active {
   transform: translateY(-5px) scale(1.01);
-  box-shadow: 0 4px 12px rgba(199, 199, 199, 1);
+  box-shadow: 0 0 10px 0 black;
   border: 1px solid #aaa;
+  opacity: 1;
 }
 
 .body {

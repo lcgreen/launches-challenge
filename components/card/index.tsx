@@ -5,12 +5,13 @@ import { ImCross } from 'react-icons/im';
 type CardProps = {
   header: React.ReactNode;
   footer?: React.ReactNode;
+  onClick?: () => void;
 }
 
 const Card = (props: React.PropsWithChildren<CardProps>): JSX.Element => {
   const { header, footer, children } = props;
   return (
-    <div tabIndex={0} className={styles.container}>
+    <div onClick={props.onClick} tabIndex={0} className={styles.container}>
       {header && <div className={styles.header}>{header}</div>}
       <div className={styles.body}>{children}</div>
       {footer && <div className={styles.footer}>{footer}</div>}

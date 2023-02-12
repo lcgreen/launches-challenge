@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/modal.scss';
 import React from 'react';
 
 function MyApp({ Component, pageProps }) {

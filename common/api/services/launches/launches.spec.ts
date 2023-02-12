@@ -9,7 +9,7 @@ describe('LaunchesService', () => {
 
   it('queries the launches service and returns mapped values', async () => {
     const data = (await json).body.docs
-    fetch['mockResponseOnce'](JSON.stringify(data));
+    fetch['mockResponse'](JSON.stringify(data));
   
     const mappedData = await LaunchesService.all()
     expect(mappedData[0]).toEqual({
@@ -21,6 +21,7 @@ describe('LaunchesService', () => {
       name: 'FalconSat',
       payload_id: '5eb0e4b5b6c3bb0006eeb1e1',
       serial: '5e9e289df35918033d3b2623',
+      payload: null,
       success: false,
     });
   })

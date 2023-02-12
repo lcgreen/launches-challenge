@@ -57,3 +57,30 @@
   gap: 4px;
   overflow: none;
 }
+
+.modalContainer {
+  max-width: 50vw;
+  max-height: 50vh;
+  overflow: scroll;
+  padding: 1rem;
+
+  table {
+    thead tr {
+      th {
+        text-align: left;
+        border-bottom: 1px solid white;
+      }
+    }
+    tbody tr {
+      td {
+        border-bottom: 1px solid #222;
+        color: #999;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+}

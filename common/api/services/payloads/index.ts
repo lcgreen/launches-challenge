@@ -1,15 +1,16 @@
 import PayloadDocument from "@@/api/schema/v4/payloadDocument";
 import BaseService  from "../baseService";
 
-export type Payload = {
+export type Payload = PayloadDocument & {
   id: string;
   type: string;
 }
 
-const mapPayloadType = (document: PayloadDocument): Payload => {
+export const mapPayloadType = (document: PayloadDocument): Payload => {
   return {
     id: document.id,
     type: document.type,
+    ...document
   };
 };
 
@@ -20,4 +21,5 @@ export default {
       return resp.map((doc) => mapPayloadType(doc));
     }
   },
+  mapPayloadType,
 };

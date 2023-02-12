@@ -4,6 +4,7 @@ exports[`Card renders the component 1`] = `
 <div>
   <div
     class="container"
+    tabindex="0"
   >
     <div
       class="header"

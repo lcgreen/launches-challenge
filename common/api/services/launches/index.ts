@@ -1,5 +1,8 @@
+import PayloadDocument from "@@/api/schema/v4/payloadDocument";
 import LaunchDocument from "@@/api/schema/v5/launchDocument";
+import { PayloadService } from "..";
 import BaseService from "../baseService";
+import { Payload } from "../payloads";
 
 export type Launch = {
   id: string
@@ -15,9 +18,10 @@ export type Launch = {
     altitude: number | null
     reason: string
   }[]
+  payload?: Payload
 }
 
-const mapDocumentType = (document: LaunchDocument): Launch => {
+const mapLaunchType = (document: LaunchDocument, payloads: PayloadDocument[]): Launch => {
   return {
     id: document.id,
     name: document.name,
@@ -28,14 +32,18 @@ const mapDocumentType = (document: LaunchDocument): Launch => {
     failures: document?.failures ?? [],
     payload_id: document?.payloads?.[0] ?? '',
     flight_number: document.flight_number,
+    payload: payloads.find((payload) => payload.id === document?.payloads?.[0]) ?? null,
   };
 };
 
 export default { 
   all: async () => {
     const resp = await BaseService.all<LaunchDocument>('launches', 'v5');
+    const payloads = await PayloadService.all();
     if (resp.length) {
-      return resp.map((doc) => mapDocumentType(doc));
+      const sortedLaunches = resp.sort((a, b) => a.flight_number - b.flight_number).slice(0, 10);
+      return sortedLaunches.map((doc) => mapLaunchType(doc, payloads));
     }
   },
+  mapLaunchType,
 }
