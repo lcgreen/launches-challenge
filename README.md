@@ -1,3 +1,5 @@
+## Developer Notes
+
 Hi, I have completed the challenge
 - I would have liked to add Cypress tests but ran out of time so settled for Jest React Testing Library
 - I was trying to use the query api but faced problems doing this so ended up using the all endpoint and splicing the data
